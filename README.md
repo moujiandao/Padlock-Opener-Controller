@@ -2,7 +2,7 @@
 
 Final project for **EME 154: Mechatronics** at UC Davis.
 
-This project controls an electromechanical system that automatically operates a three-number combination padlock. The embedded C program coordinates the motor, encoder, user interface, and solenoid used to dial and release the lock.
+This project controls an electromechanical system that automatically operates a three-number combination padlock. The embedded C++ program coordinates the motor, encoder, user interface, and solenoid used to dial and release the lock.
 
 ## Features
 
@@ -19,7 +19,7 @@ In automatic mode, the user enters a three-number combination. The controller ca
 
 ## Technical Details
 
-- Embedded C
+- Embedded C++
 - 8052-compatible microcontroller
 - Motor and encoder feedback
 - 40-position combination dial
