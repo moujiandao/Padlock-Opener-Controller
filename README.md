@@ -1,34 +1,29 @@
 # Automatic Padlock Opener
 
-Final project for **EME 154: Mechatronics** at UC Davis.
+This repository preserves the controller program for a 2014 UC Davis EME 154 mechatronics project built by Brian Mar and Max Toback.
 
-This project controls an electromechanical system that automatically operates a three-number combination padlock. The embedded C++ program coordinates the motor, encoder, user interface, and solenoid used to dial and release the lock.
+The system used a motor, encoder, solenoid, keypad, and the UC Davis MORPH controller platform to operate a three-number combination padlock.
 
-## Features
+## Controller behavior
 
-- Manual, semi-automatic, and automatic operating modes
-- Encoder-based dial positioning
-- Clockwise and counterclockwise motor control
-- Configurable motor speed and encoder resolution
-- Input validation and system diagnostics
-- Solenoid actuation to release the lock
+The source includes:
 
-## How It Works
+- Manual clockwise and counterclockwise movement.
+- A semi-automatic operating mode.
+- Automatic combination entry and dial sequencing.
+- Configurable encoder resolution, motor speed, and dial positions.
+- Position feedback through the controller's motion registers.
+- Solenoid activation after the final dial movement.
+- Console menus, setup state, and basic input checks.
 
-In automatic mode, the user enters a three-number combination. The controller calculates the required dial movement, executes the correct clockwise and counterclockwise sequence, and activates the solenoid after reaching the final number.
+The implementation is in [`APOC_before_Tues.C`](APOC_before_Tues.C).
 
-## Technical Details
+## Hardware and toolchain
 
-- Embedded C++
-- 8052-compatible microcontroller
-- Motor and encoder feedback
-- 40-position combination dial
-- UC Davis MORPH mechatronics platform
+The program targets an 8052-compatible microcontroller and depends on the course-specific `MORPH.h` interface, memory-mapped controller registers, and assembly entry points supplied by the MORPH environment.
 
-## Source
+It is not a portable desktop C++ application and cannot be built with a standard compiler without the original controller headers and runtime.
 
-The controller implementation is in [`APOC_before_Tues.C`](./APOC_before_Tues.C).
+## Project status
 
-## Authors
-
-Brian Mar and Max Toback
+This is an archived classroom artifact. The source is kept close to its original 2014 state, including work-in-progress comments and hardware-specific assumptions. It has not been verified on a modern MORPH toolchain.
